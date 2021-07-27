@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>New Orleans Evacuspots</title>
+	
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+   	<script src="js/leaflet-providers.js"></script>
+	<style type="text/css">
+		#map {position: absolute; top: 0; bottom: 0; left: 0; right: 0;}
+	</style>
+	
+</head>
+<body>
+		<div class="intro">
+			<h1> New Orleans City Map </h1>
+			<h2> This map shows some features in the city of New Orleans </h2>
+		</div>
+		<div id = "map"> </div>
+		<script>
+			var map = L.map('map').setView([29.96909, -90.05124], 10); 
+			var OpenStreetMap_DE = L.tileLayer('https://{s}.tile.openstreetmap.de/tiles/osmde/{z}/{x}/{y}.png', {
+		maxZoom: 18,
+		attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+		}).addTo(map);
+			var icon = L.icon({
+				inconUrl: 'fleuricon.png', 
+				iconSize: [30,30], 
+			}); 
+			var icanal = L.marker([30.023688834805142, -90.03187755439536]).addTo(map).bindPopup("Industrial Canal"); 
+			var nolaeast = L.polygon ([
+				[30.035158394406135, -90.03253896563243],
+				[29.993762231276357, -90.02104734946646], 
+				[30.070413466176564, -89.65783633895171], 
+				[30.168878272682676, -89.85598125984467]
+				]).addTo(map).bindPopup("New Orleans East"); 
+			var loncanal = L.circle([30.009903497763524, -90.06966185202536]).addTo(map).bindPopup("London Canal"); 
+			var miriver = L.polyline ([
+				[29.950555581937273, -90.01688826335686], 
+				[29.958329055224258, -90.05781465089677], 
+				[29.933231929435962, -90.05930501199825]
+				]).addTo(map).bindPopup("Algiers Bend"); 
+		
+
+		</script>
+
+</body>
+</html>
