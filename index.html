@@ -33,14 +33,24 @@
 				[30.035158394406135, -90.03253896563243],
 				[29.993762231276357, -90.02104734946646], 
 				[30.070413466176564, -89.65783633895171], 
-				[30.168878272682676, -89.85598125984467]
-				]).addTo(map).bindPopup("New Orleans East"); 
-			var loncanal = L.circle([30.009903497763524, -90.06966185202536]).addTo(map).bindPopup("London Canal"); 
+				[30.168878272682676, -89.85598125984467],
+				], {
+					color: 'red', 
+  					fillColor: 'red',
+  					fillOpacity: .15
+				}).addTo(map).bindPopup("New Orleans East"); 
+			var loncanal = L.circle([30.009903497763524, -90.06966185202536], {
+				 fillColor: '#f04',
+  				fillOpacity: 0.5,
+ 				radius: 300,
+			}).addTo(map).bindPopup("London Canal"); 
 			var miriver = L.polyline ([
 				[29.950555581937273, -90.01688826335686], 
 				[29.958329055224258, -90.05781465089677], 
 				[29.933231929435962, -90.05930501199825]
-				]).addTo(map).bindPopup("Algiers Bend"); 
+				], {
+					color: 'red',
+				}).addTo(map).bindPopup("Algiers Bend"); 
 		
 
 		</script>
